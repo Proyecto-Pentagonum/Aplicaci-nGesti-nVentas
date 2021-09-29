@@ -1,0 +1,40 @@
+body{
+    font-family: 'Spartan', sans-serif;
+}
+
+#main-table{
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table{
+    background-color: #fff7c8;
+    text-align:center;
+    width: 80%;
+    border-collapse: collapse;
+    border:solid 1px #BCBBC2;
+    
+}
+
+th, td{
+    padding: 8px;
+    font-size: 12px;
+}
+
+thead{
+    background-color: white;
+    border: solid 1px #BCBBC2;   
+}
+
+tr:nth-child(even){
+    background-color: white;
+}
+
+.icontable{
+    size: 50px;
+    color: #C69F15;
+    cursor: pointer;
+}
+
