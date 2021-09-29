@@ -2,7 +2,55 @@ body{
     font-family: 'Spartan', sans-serif;
 }
 
-#main-table{
+ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.subtitulo{
+    font-size: xx-large;
+    margin-top:25px;
+    margin-left: 25px;
+}
+
+.info-buscar{
+    display: flex;
+    align-items: center;
+    font-size: x-large;
+}
+
+.buscarventas{
+    display: flex;
+    border: 1px solid #ebebeb;
+    background-color: #ebebeb;
+    padding: 4px;
+    border-radius: 8px;
+    width: 250px;
+    margin: 25px;
+}
+
+input{
+    background-color: #ebebeb;
+    font-size: 15px;
+    padding-left: 17px;
+}
+
+.buscarventas:focus-within{
+    border:1px solid #c1c1c4;
+}
+
+.buscarventas > input{
+    outline: none;
+    border: 0px;
+}
+
+.iconobuscar{
+    padding-left: 5px;
+   
+}
+
+.main-table{
 
     display:flex;
     justify-content: center;
@@ -32,9 +80,16 @@ tr:nth-child(even){
     background-color: white;
 }
 
-.icontable{
+.icono{
+    cursor: pointer;
+}
+
+.iconotabla{
     size: 50px;
     color: #C69F15;
     cursor: pointer;
+    font-size: medium;
+    
 }
+
 
