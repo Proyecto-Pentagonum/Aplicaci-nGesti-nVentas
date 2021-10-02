@@ -21,7 +21,7 @@ export class UI {
     }
   
     deleteProduct(element) {
-      if (element.nombre === "delete") {
+      if (element.name === "delete") {
         element.parentElement.parentElement.remove();
         this.showMessage("Producto Borrado Exitosamente", "Logrado Exitosamente");
       }

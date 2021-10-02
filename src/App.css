@@ -24,3 +24,19 @@ body {
 .bg-dark {
     background-color: #C69F15 !important;
 }
+
+.btn-primary:hover {
+    background-color: #C69F15;
+    border-color: #C69F15
+}
+
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #C69F15;
+    border-color: #C69F15;
+}
+
+.btn-block {
+    background-color: #C69F15;
+    border-color: #C69F15;
+}
