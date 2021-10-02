@@ -5,7 +5,7 @@ import { UI } from "./UI.js";
 document
 .getElementById("product-form")
 .addEventListener("submit", function (e) {
-    // Override the default Form behaviour
+
     e.preventDefault();
 
 
