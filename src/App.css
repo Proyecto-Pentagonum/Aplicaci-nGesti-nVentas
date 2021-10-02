@@ -11,3 +11,16 @@
 .error {
     background: red;
 }
+
+.btn-primary {
+    background-color: #C69F15;
+    border-color: #C69F15
+}
+
+body {
+    font-family: Spartan, sans-serif;
+}
+
+.bg-dark {
+    background-color: #C69F15 !important;
+}
