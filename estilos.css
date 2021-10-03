@@ -423,12 +423,17 @@ tr:nth-child(even){
 }
 
 .caja-estado-venta{
-    width: 350px;
+    width: 520px;
     
 }
 
 .opcion-estado-venta{
     margin-right: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 5% ;
+    
 }
 .campo-estado-venta{
 
