@@ -1,0 +1,253 @@
+body{
+    font-family: 'Spartan', sans-serif;
+    margin: 0px;
+}
+
+ul{
+    list-style: none;
+    padding: 0px;
+}
+
+header{
+    background-color: #CDB42F;
+}
+
+.navbar{
+    margin: 0px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+   
+}
+
+.hamburguesa{
+    font-size: 30px;
+    color: white;
+    margin: 6px;
+    padding-left: 50px;
+    cursor: pointer;
+}
+
+.logo{
+    height: 30px;
+}
+
+.logo-letra{
+    font-size: x-large;
+    color: white;
+}
+
+.user{
+    margin: 10px ;
+    color: white;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+.list-ventas{
+    max-width: 1250px;
+    width: 100%;
+    margin: 50px;
+    display: grid;
+
+
+}
+
+.subtitulo{
+    font-size: xx-large;
+    
+}
+
+.info-buscar{
+    display: flex;
+    align-items: center;
+    font-size: x-large;
+    margin: 0px;
+}
+
+.var-buscar-venta{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px;
+    
+}
+
+.buscarventas{
+    display: flex;
+    border: 1px solid #ebebeb;
+    background-color: #ebebeb;
+    padding: 4px;
+    border-radius: 8px;
+    width: 250px;
+    
+    margin-bottom: 25px;
+    margin-top: 25px;
+    margin-right: 15px;
+    
+}
+
+input{
+    background-color: #ebebeb;
+    padding-left: 17px;
+}
+
+.buscarventas:focus-within{
+    border:1px solid #c1c1c4;
+}
+
+.buscarventas > input{
+    outline: none;
+    border: 0px;
+}
+
+.iconobuscar{
+    padding-left: 5px;
+}
+
+.btnregistroventa{
+    width: 150px;
+    height: 40px;
+}
+
+.main-table{
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table{
+    background-color: #fff7c8;
+    text-align:center;
+    width: 80%;
+    border-collapse: collapse;
+    border:solid 1px #BCBBC2;  
+}
+
+th, td{
+    padding: 8px;
+    font-size: 12px;
+}
+
+thead{
+    background-color: white;
+    border: solid 1px #BCBBC2;   
+}
+
+tr:nth-child(even){
+    background-color: white;
+}
+
+.icono{
+    cursor: pointer;
+
+}
+
+.iconotabla{
+    size: 50px;
+    color: #C69F15;
+    cursor: pointer;
+    font-size: medium;
+    
+}
+
+.sub{
+    display: flex;
+    justify-content: left;
+    margin: 35px ;
+}
+
+.botones-reg-venta{
+    margin-right: 20%;
+    margin-left: 20%;
+    
+       
+}
+
+.botones-factura{
+    display: flex;
+    justify-content: space-between;
+}
+
+.boton{
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #f0c11a;
+    background-color: #f0c11a;
+    font-family: 'Spartan', sans-serif;
+    cursor: pointer;
+    
+}
+
+.boton:focus{
+    border: 2px solid #C69F15;
+}
+
+.boton-form{
+    width: 230px;
+}
+
+.id-fecha-factura{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 8px;
+    
+}
+
+.area-cliente{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cajaFormulario{
+    max-width: 900px;
+    width: 100%;
+    padding: 10px;
+    margin: 2px auto;
+    border-top: 3px solid #CDB42F;
+    display: grid;
+ 
+    
+}
+
+
+.cajaFormulario .input_field label{
+    width: 200px;
+    margin-right: 10px;
+    
+
+}
+
+.cajaFormulario .input_field .campoForm{
+
+    outline: none;
+    border: 1px solid #ADA7A7;
+    background-color:white;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 8px 10px;
+}
+
+.cajaFormulario .input_field .campoForm:focus{
+    border: 1px solid #f0c11a;
+}
+
+.seccion-form{
+    font-family: 'Spartan', sans-serif;
+
+}
+
+.esp-boton{
+    margin: 10px auto;
+    justify-content: center;
+
+}
+
+.secon-tabla{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100% auto;
+}
+

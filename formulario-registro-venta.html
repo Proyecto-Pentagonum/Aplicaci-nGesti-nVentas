@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spartan&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@500&display=swap" rel="stylesheet">
+    <title>Pentagonum</title>
+</head>
+<body>
+    <header>
+       
+    </header>
+    <main>
+        <div class="subtitulo sub">
+            <span >Registro de ventas</span>
+        </div>
+
+        <ul class="id-fecha-factura">
+            <li>
+                <span>ID factura: 1</span>
+            </li>
+            <li>
+                <span >03/04/2021</span>
+            </li>
+        </ul>  
+         
+                <section class = "cajaFormulario">
+                    <span class="seccion-form"> <b>Area cliente</b></span>
+                    <ul class="area-cliente">
+                        <li>
+                            <div class="input_field">
+                                <label>Nombre cliente</label>
+                                <input class="campoForm" type="text" name="nombre-cliente"/>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="input_field">
+                                <label>Cedula cliente</label>
+                                <input class="campoForm" type="number" name="id-cliente"/>
+                            </div>
+                        </li>
+                    </ul>
+                    <br>
+                    <br>
+                    <span class="seccion-form"><b>Area ventas</b></span>
+                    <ul class="area-cliente">
+                        <li>
+                            <div class="input_field">
+                                <label>ID articulo</label>
+                                <input class="campoForm" type="number" name="id-articulo"/>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="input_field">
+                                <label>Cantidad</label>
+                                <input class="campoForm" type="number" name="cantidad"/>
+                            </div>
+                        </li>
+                    </ul>
+                    <br>
+                    <br>
+                    <ul>
+                        <li>
+                            <span class="seccion-form">Precio unitario:</span>
+                            <span>$5.000</span>
+                        </li>
+                        <br>
+                        <br>
+                        <li>
+                            <span class="seccion-form">Precio Acumulado:</span>
+                            <span class="seccion-form">$5.000</span>
+                        </li>
+                        <br>
+                        <br>
+                        <li>
+                            <span>Estado venta: </span>
+                            <span>Pendiente</span>
+                        </li>
+                    </ul>
+                    <div class="esp-boton">
+                        <button class="boton boton-form">Registrar producto</button>
+                    </div>
+                    
+                
+
+                <div class="main-table secon-tabla">
+                    <table rules='cols'>
+                        <thead>
+                            <tr>
+                                <th>Item</th><th>ID</th><th>Descripción</th><th>Cantidad</th><th>Precio unitario</th><th>Precio acumulado</th><th>Borrar</th>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td>1</td><td>25365</td><td>Camisa polo</td><td>2</td><td>$2000</td><td>10000</td><td><i class="fas fa-trash-alt iconotabla"></i></td>
+                        </tr>
+                        <tr>
+                            <td>2</td><td>51420</td><td>Camiseta</td><td>1</td><td>$5000</td><td>5000</td><td><i class="fas fa-trash-alt iconotabla"></i></td>
+                        </tr>
+                        <tr>
+                            <td>3</td><td>36521<td>Pantalon</td><td>6</td><td>$3000</td><td>20000</td><td><i class="fas fa-trash-alt iconotabla"></i></td>
+                        </tr>
+                        <tr>
+                            <td>4</td><td>84523</td><td>Camisa dama</td><td>1</td><td>$2000</td><td>20000</td><td><i class="fas fa-trash-alt iconotabla"></i></td>
+                        </tr>
+                        <tr>
+                            <td>5</td><td>96523</td><td>Chaqueta</td><td>3</td><td>$6000</td><td>8000</td><td><i class="fas fa-trash-alt iconotabla"></i></td>
+                        </tr>
+                        <tr>
+                            <td>6</td><td>24153</td><td>Gorra</td><td>1</td><td>$6000</td><td>10000</td><td><i class="fas fa-trash-alt iconotabla"></i></td>
+                        </tr>
+                    </table>
+                </div>
+
+                    <div class="botones-reg-venta">
+                        <ul class="botones-factura">
+                            <il>
+                                <input class='boton boton-form' type="button" name='registrar-venta' value="Registrar venta">
+                            </il>
+                            <il>
+                               <input class='boton boton-form' type="button" name='cancelar-venta' value="Cancelar venta"/>
+                            </il>
+                        </ul>
+                    </div>
+                </section>
+                
+                
+    </main>
+</body>
+</html>
