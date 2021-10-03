@@ -3,6 +3,10 @@ body{
     margin: 0px;
 }
 
+main{
+    overflow: hidden;
+}
+
 ul{
     list-style: none;
     padding: 0px;
@@ -251,3 +255,126 @@ tr:nth-child(even){
     width: 100% auto;
 }
 
+.alert{
+    background: rgb(67, 199, 67);
+    padding: 20px 30px;
+    min-width: 380px;
+    position: absolute;
+    right: 0px;
+    top: 10px;
+    overflow: hidden;
+    border-radius: 4px;
+    border-left: 8px solid green;
+}
+
+.alert .mostrar{
+    animation: show_slide 1s ease forwards;
+}
+
+@keyframes show_slide{
+    0%{
+        transform: translateX(100%);
+    }
+    80%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(-10px);
+    }
+}
+
+.alert .esconder{
+    display: none;
+}
+
+.alert .fa-exclamation-circle{
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgb(1, 102, 1);
+    font-size: 30px;
+}
+
+.alert .msg{
+    padding: 0 25px;
+    font-size: 18px;
+    color: rgb(1, 102, 1);
+}
+
+.alert .boton-cerrar{
+    position: absolute;
+    right: 0px;
+    top:50%;
+    transform: translateY(-50%);
+    background:rgb(27, 173, 27);
+    padding: 20px 18px;
+    cursor: pointer;
+}
+
+.alert-dos{
+    background: rgb(238, 55, 42);
+    padding: 20px 30px;
+    min-width: 380px;
+    position: absolute;
+    right: 0px;
+    top: 10px;
+    overflow: hidden;
+    border-radius: 4px;
+    border-left: 8px solid rgb(204, 8, 8);
+}
+
+.alert-dos .mostrar{
+    animation: show_slide 1s ease forwards;
+}
+
+@keyframes show_slide{
+    0%{
+        transform: translateX(100%);
+    }
+    80%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(-10px);
+    }
+}
+
+.alert-dos .esconder{
+    display: none;
+}
+
+.alert-dos .fa-exclamation-circle{
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgb(150, 11, 11);
+    font-size: 30px;
+}
+
+.alert-dos .msg{
+    padding: 0 25px;
+    font-size: 18px;
+    color: rgb(150, 11, 11);
+}
+
+.alert-dos .boton-cerrar-2{
+    position: absolute;
+    right: 0px;
+    top:50%;
+    transform: translateY(-50%);
+    background:rgb(228, 33, 33);
+    padding: 20px 18px;
+    cursor: pointer;
+}
+
+.boton-cerrar-2:hover{
+    background:rgb(238, 55, 42);
+}
+
+.boton-cerrar-2 .fa-times{
+    color: rgb(150, 11, 11);
+    font-size: 22px;
+    line-height: 40px;
+} 
