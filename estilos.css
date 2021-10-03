@@ -139,6 +139,7 @@ thead{
     border: solid 1px #BCBBC2;   
 }
 
+
 tr:nth-child(even){
     background-color: white;
 }
@@ -164,9 +165,7 @@ tr:nth-child(even){
 
 .botones-reg-venta{
     margin-right: 20%;
-    margin-left: 20%;
-    
-       
+    margin-left: 20%;   
 }
 
 .botones-factura{
@@ -378,3 +377,63 @@ tr:nth-child(even){
     font-size: 22px;
     line-height: 40px;
 } 
+
+/*Actualizar ventas*/
+.date-actualizar-vent{
+    padding-top: 10px;
+}
+
+.seccion-date-actual-venta{
+    width: 200px;
+    margin: 10px;
+    background: none;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ADA7A7;
+    padding: 8px 10px;
+}
+
+.edit-ventas{
+    outline: none;
+    border: none;
+    background: none;
+    height: 20px;
+    width: 50px;
+    font-family: 'Spartan', sans-serif;
+    text-align: center;
+    padding: 0px;
+}
+
+.edit-ventas:focus-within{
+    border-bottom: 1px solid #ADA7A7;
+}
+
+.caja-total-venta{
+    width: 500px;
+    margin-right: 20%;
+    margin-left: 20%;
+
+}
+
+.total-venta{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.caja-estado-venta{
+    width: 350px;
+    
+}
+
+.opcion-estado-venta{
+    margin-right: 30%;
+}
+.campo-estado-venta{
+
+    font-family: 'Spartan', sans-serif;
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+}
