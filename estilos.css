@@ -422,6 +422,14 @@ tr:nth-child(even){
 
 }
 
+.total{
+    margin-right: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 5%;
+}
+
 .caja-estado-venta{
     width: 520px;
     
@@ -432,7 +440,7 @@ tr:nth-child(even){
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 5% ;
+    margin-left: 5%;
     
 }
 .campo-estado-venta{
@@ -442,3 +450,10 @@ tr:nth-child(even){
     height: 30px;
     border-radius: 5px;
 }
+
+/*Descripcion factura*/
+.datos-factura{
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
