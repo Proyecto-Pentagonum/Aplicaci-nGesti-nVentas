@@ -93,10 +93,20 @@
                         </li>
                         <br>
                         <br>
-                        <li>
-                            <span>Estado venta: </span>
-                            <span>Pendiente</span>
-                        </li>
+                        <div class="caja-estado-venta">
+                            <ul class="opcion-estado-venta regis">
+                                <li>
+                                    <label>Estado venta</label>
+                                </li>
+                                <li>
+                                    <select class="campo-estado-venta" name="Estado-venta">
+                                        <option value ="En proceso">En proceso</option>
+                                        <option value="Cancelada">Cancelada</option>
+                                        <option value="Entregada">Entregada</option>
+                                    </select>
+                                </li>
+                            </ul>
+                        </div>
                     </ul>
                     <div class="esp-boton">
                         <button class="boton boton-form">Registrar producto</button>

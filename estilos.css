@@ -443,6 +443,12 @@ tr:nth-child(even){
     margin-left: 5%;
     
 }
+
+.regis{
+    margin-left: 0%;
+    margin-right: 38%;
+}
+
 .campo-estado-venta{
 
     font-family: 'Spartan', sans-serif;
