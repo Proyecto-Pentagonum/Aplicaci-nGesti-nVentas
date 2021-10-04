@@ -408,26 +408,12 @@ tr:nth-child(even){
     border-bottom: 1px solid #ADA7A7;
 }
 
-.caja-total-venta{
-    width: 500px;
-    margin-right: 20%;
-    margin-left: 20%;
-
-}
-
-.total-venta{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-}
-
 .total{
     margin-right: 70%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 5%;
+
 }
 
 .caja-estado-venta{
@@ -436,12 +422,10 @@ tr:nth-child(even){
 }
 
 .opcion-estado-venta{
-    margin-right: 30%;
+    margin-right: 38%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 5%;
-    
 }
 
 

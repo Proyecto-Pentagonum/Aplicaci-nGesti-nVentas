@@ -72,7 +72,24 @@
                     <br>
                     
                     <span class="seccion-form"><b>Area ventas</b></span>
-                    
+                    <ul class="area-cliente">
+                        <li>
+                            <div class="input_field">
+                                <label>ID articulo</label>
+                                <input class="campoForm" type="number" name="id-articulo"/>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="input_field">
+                                <label>Cantidad</label>
+                                <input class="campoForm" type="number" name="cantidad"/>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="esp-boton">
+                        <button class="boton boton-form">Registrar producto</button>
+                    </div>
+
                 <div class="main-table secon-tabla">
                     <table rules='cols'>
                         <thead>
@@ -81,40 +98,26 @@
                             </tr>
                         </thead>
                         <tr>
-                            <td>1</td><td><input class="edit-ventas" value="1234" type="text"/></td><td>Camisa polo</td><td><input class="edit-ventas" value="1" type="text"/></td><td>$2000</td><td>10000</td><td><i class="fas fa-edit iconotabla"></i></td><td><i class="fas fa-trash-alt iconotabla"></i></td>
+                            <td>1</td><td>1234</td><td>Camisa polo</td><td>1</td><td>$2000</td><td>10000</td><td><i class="fas fa-edit iconotabla"></i></td><td><i class="fas fa-trash-alt iconotabla"></i></td>
                         </tr>
                         <tr>
-                            <td>2</td><td><input class="edit-ventas" value="1234" type="text"/></td><td>Camiseta</td><td><input class="edit-ventas" value="2" type="text"/></td><td>$5000</td><td>5000</td><td><i class="fas fa-edit iconotabla"></i></td><td><i class="fas fa-trash-alt iconotabla"></i></td>
+                            <td>2</td><td>1235</td><td>Camiseta</td><td>2</td><td>$5000</td><td>5000</td><td><i class="fas fa-edit iconotabla"></i></td><td><i class="fas fa-trash-alt iconotabla"></i></td>
                         </tr>
                         <tr>
-                            <td>3</td><td><input class="edit-ventas" value="1234" type="text"/><td>Pantalon</td><td><input class="edit-ventas" value="1" type="text"/></td><td>$3000</td><td>20000</td><td><i class="fas fa-edit iconotabla"></i></td><td><i class="fas fa-trash-alt iconotabla"></i></td>
+                            <td>3</td><td>1326<td>Pantalon</td><td>3</td><td>$3000</td><td>20000</td><td><i class="fas fa-edit iconotabla"></i></td><td><i class="fas fa-trash-alt iconotabla"></i></td>
                         </tr>
                         <tr>
-                            <td>4</td><td><input class="edit-ventas" value="1234" type="text"/></td><td>Camisa dama</td><td><input class="edit-ventas" value="3" type="text"/></td><td>$2000</td><td>20000</td><td><i class="fas fa-edit iconotabla"></i></td><td><i class="fas fa-trash-alt iconotabla"></i></td>
+                            <td>4</td><td>3526</td><td>Camisa dama</td><td>2</td><td>$2000</td><td>20000</td><td><i class="fas fa-edit iconotabla"></i></td><td><i class="fas fa-trash-alt iconotabla"></i></td>
                         </tr>
                         <tr>
-                            <td>5</td><td><input class="edit-ventas" value="1234" type="text"/></td><td>Chaqueta</td><td><input class="edit-ventas" value="12" type="text"/></td><td>$6000</td><td>8000</td><td><i class="fas fa-edit iconotabla"></i></td><td><i class="fas fa-trash-alt iconotabla"></i></td>
+                            <td>5</td><td>2563</td><td>Chaqueta</td><td>1</td><td>$6000</td><td>8000</td><td><i class="fas fa-edit iconotabla"></i></td><td><i class="fas fa-trash-alt iconotabla"></i></td>
                         </tr>
                         <tr>
-                            <td>6</td><td><input class="edit-ventas" value="1234" type="text"/></td><td>Gorra</td><td><input class="edit-ventas" value="1" type="text"/></td><td>$6000</td><td>10000</td><td><i class="fas fa-edit iconotabla"></i></td><td><i class="fas fa-trash-alt iconotabla"></i></td>
+                            <td>6</td><td>2415</td><td>Gorra</td><td>2<td>$6000</td><td>10000</td><td><i class="fas fa-edit iconotabla"></i></td><td><i class="fas fa-trash-alt iconotabla"></i></td>
                         </tr>
                     </table>
                     
                 </div>
-                <div class="caja-total-venta">
-                <ul class="total-venta">
-                    <li>
-                        <button class="boton" type="button">Agregar venta</button>
-                    </li>
-                    <li>
-                        <div class="Total-venta">
-                            <span>Total</span>
-                            <span>$10000</span>
-                        </div>
-                    </li>
-                </ul>
-                </div>
-
                 <div class="caja-estado-venta">
                     <ul class="opcion-estado-venta">
                         <li>
@@ -129,6 +132,16 @@
                         </li>
                     </ul>
                 </div>
+                <div class="caja-estado-venta">
+                    <ul class="total">
+                        <li>
+                            <span>Total:</span>
+                        </li>
+                        <li>
+                            <span>$10000</span>
+                        </li>
+                    </ul>
+                </div>
 
                     <div class="botones-reg-venta">
                         <ul class="botones-factura">
@@ -140,9 +153,7 @@
                             </il>
                         </ul>
                     </div>
-                </section>
-               
-                
+            </section>     
     </main>
 </body>
 </html>
