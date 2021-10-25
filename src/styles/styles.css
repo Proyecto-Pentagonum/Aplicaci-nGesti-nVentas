@@ -1,0 +1,42 @@
+.success, .error {
+    color: white;
+    padding: 5px;
+    margin: 5px 0 15px 0;
+}
+
+.success {
+    background: green;
+}
+
+.error {
+    background: red;
+}
+
+.btn-primary {
+    background-color: #C69F15;
+    border-color: #C69F15
+}
+
+body {
+    font-family: Spartan, sans-serif;
+}
+
+.bg-dark {
+    background-color: #C69F15 !important;
+}
+
+.btn-primary:hover {
+    background-color: #C69F15;
+    border-color: #C69F15
+}
+
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #C69F15;
+    border-color: #C69F15;
+}
+
+.btn-block {
+    background-color: #C69F15;
+    border-color: #C69F15;
+}
