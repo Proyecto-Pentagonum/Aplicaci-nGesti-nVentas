@@ -8,7 +8,7 @@ const getToken = () => {
 export const obtenerProductos = async (successCallback, errorCallback) => {
     const options = {
       method: 'GET',
-      url: `${baseURL}/vehiculos/`,
+      url: `${baseURL}/productos/`,
       headers: {
         Authorization: getToken(),
       },
@@ -60,7 +60,7 @@ export const obtenerProductos = async (successCallback, errorCallback) => {
       method: 'GET',
       url: `${baseURL}/personas/self/`,
       headers: {
-        Authorization: getToken(), // 3. enviarle el token a backend
+        Authorization: getToken(),
       },
     };
     await axios.request(options).then(successCallback).catch(errorCallback);

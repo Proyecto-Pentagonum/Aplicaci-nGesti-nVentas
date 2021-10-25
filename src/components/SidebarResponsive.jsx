@@ -5,7 +5,7 @@ const SidebarResponsive = () => {
   const [mostrarNavegacion, setMostrarNavegacion] = useState(false);
   return (
     <div
-      className="md:hidden"
+      className="lg:hidden"
       onClick={() => {
         setMostrarNavegacion(!mostrarNavegacion);
       }}
@@ -17,7 +17,6 @@ const SidebarResponsive = () => {
       />
       {mostrarNavegacion && (
         <ul className="bg-yellow-800">
-          <ResponsiveRoute nombre="Perfil" ruta="/admin/perfil" />
           <ResponsiveRoute nombre="Productos" ruta="/admin/productos" />
           <ResponsiveRoute nombre="Ventas" ruta="/admin/ventas" />
           <ResponsiveRoute nombre="Personas" ruta="/admin/personas" />

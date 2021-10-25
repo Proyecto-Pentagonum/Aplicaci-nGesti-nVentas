@@ -156,7 +156,7 @@ const FilaProducto = ({producto, setEjecutarConsulta}) => {
   const [openDialog, setOpenDialog] = useState(false);
   const [infoNuevoProducto, setInfoNuevoProducto] = useState({
     id:producto.id,
-    nombre:producto.name,
+    nombre:producto.nombre,
     precio:producto.precio,
     cantidad:producto.cantidad
   })
@@ -234,8 +234,12 @@ const FilaProducto = ({producto, setEjecutarConsulta}) => {
             <input className="bg-gray-50 border border-yellow-700 p-2 rounded-lg m-2"
               type="number"
               min='1'
-              value={infoNuevoProducto.cantidad}/></td>
-              onChange = {e=> setInfoNuevoProducto({...infoNuevoProducto, cantidad: e.target.value})}
+              value={infoNuevoProducto.cantidad}
+              onChange = {e=> 
+              setInfoNuevoProducto({...infoNuevoProducto, cantidad: e.target.value})
+              }
+              />
+          </td>
         </>
       ) : (
     <>
@@ -285,7 +289,7 @@ const FilaProducto = ({producto, setEjecutarConsulta}) => {
               </h1>
               <div className='flex w-full items-center justify-center my-4'>
                 <button
-                  onClick={() => eliminarProducto()}
+                  onClick={() => borrarProducto()}
                   className='mx-2 px-4 py-2 bg-green-500 text-white hover:bg-green-700 rounded-md shadow-md'
                 >
                   Sí
@@ -328,11 +332,11 @@ const FormularioCreacionProductos = ({
       },
       (response) => {
         console.log(response.data);
-        toast.success('Vehículo agregado con éxito');
+        toast.success('Producto agregado con éxito');
       },
       (error) => {
         console.error(error);
-        toast.error('Error creando un vehículo');
+        toast.error('Error creando un producto');
       }
     );
     setMostrarTabla(true);
@@ -375,7 +379,6 @@ const FormularioCreacionProductos = ({
           type="number"
           min="1"
           placeHolder="Cantidad"
-          
           required
         />
         </label>
