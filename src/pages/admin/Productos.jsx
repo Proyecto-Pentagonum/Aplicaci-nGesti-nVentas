@@ -2,9 +2,10 @@ import React, { useEffect, useState, useRef } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import { nanoid } from 'nanoid';
 import { Dialog, Tooltip } from '@material-ui/core';
+import { obtenerProductos, crearProducto, editarProducto, eliminarProducto } from 'utils/api';
+import ReactLoading from 'react-loading';
 import 'react-toastify/dist/ReactToastify.css';
-import axios from "axios";
-import obtenerProductos from '/utils/api';
+import PrivateComponent from 'components/PrivateComponent';
 
 const Productos = () => {
   const [mostrarTabla, setMostrarTabla] = useState(true);
@@ -12,22 +13,33 @@ const Productos = () => {
   const [textoBoton, setTextoBoton] = useState("Ingresar Nuevo Producto");
   const [colorBoton, setColorBoton] = useState('yellow');
   const [ejecutarConsulta, setEjecutarConsulta] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const options = { method: 'GET', url:''};
-    await axios.request(options)
-    .then(function(response) {
-      setProductos(response.data);
-    })
+    const fetchProductos = async () => {
+      setLoading(true);
+      await obtenerProductos(
+        (response) => {
+          console.log('la respuesta recibida fue', response);
+          setProductos(response.data);
+          setEjecutarConsulta(false);
+          setLoading(false);
+        },
+        (error) => {
+          console.error('Se produjo un error:', error);
+          setLoading(false);
+        }
+      );
+    };
+    console.log('consulta', ejecutarConsulta);
     if (ejecutarConsulta) {
-      obtenerProductos();
-      setEjecutarConsulta(false);
+      fetchProductos();
     }
-  }, [ejecutarConsulta])
+  }, [ejecutarConsulta]);
 
   useEffect(() => {
     //Obtener lista de productos desde el backend
-    if (mostarTabla) {
+    if (mostrarTabla) {
       setEjecutarConsulta(true);
     }
   }, [mostrarTabla]);
@@ -58,20 +70,22 @@ const Productos = () => {
       </div>
 
       {mostrarTabla ? (
-        <TablaProductos listaProductos = {productos} setEjecutarConsulta = {setEjecutarConsulta}/>
+        <TablaProductos
+        loading={loading}
+        listaProductos = {productos}
+        setEjecutarConsulta = {setEjecutarConsulta}/>
       ) : (
         <FormularioCreacionProductos
         setMostrarTabla = {setMostrarTabla}
         listaProductos = {productos}
         setProductos = {setProductos}/>
       )}
-      <ToastContainer position="bottom-center" autoClose={5000}/>
+      <ToastContainer position="bottom-center" autoClose={3500}/>
     </div>
   );
 };
 
-const TablaProductos = ({ listaProductos, setEjecutarConsulta }) => {
-  const form = useRef(null);
+const TablaProductos = ({ loading, listaProductos, setEjecutarConsulta }) => {
   const [busqueda, setBusqueda] = useState('');
   const [productosFiltrados, setProductosFiltrados] = useState(listaProductos);
 
@@ -94,13 +108,19 @@ const TablaProductos = ({ listaProductos, setEjecutarConsulta }) => {
         Listado Productos
       </h2>
       <div className='hidden md:flex w-full'>
+      {loading ? (
+          <ReactLoading type='cylon' color='#abc123' height={667} width={375} />
+      ) : (
       <table className='tabla'>
         <thead>
           <tr>
+            <th>Id</th>
             <th>Nombre Producto</th>
             <th>Precio Producto</th>
             <th>Unidades en Stock</th>
+            <PrivateComponent roleList={['admin']}>
             <th>Acciones</th>
+            </PrivateComponent>
           </tr>
         </thead>
         <tbody>
@@ -114,6 +134,7 @@ const TablaProductos = ({ listaProductos, setEjecutarConsulta }) => {
           })}
         </tbody>
         </table>
+      )}
         </div>
         <div className='flex flex-col w-full m-2 md:hidden'>
           {productosFiltrados.map((el) => {
@@ -132,45 +153,54 @@ const TablaProductos = ({ listaProductos, setEjecutarConsulta }) => {
 
 const FilaProducto = ({producto, setEjecutarConsulta}) => {
   const [edit, setEdit] = useState(false);
+  const [openDialog, setOpenDialog] = useState(false);
   const [infoNuevoProducto, setInfoNuevoProducto] = useState({
+    id:producto.id,
     nombre:producto.name,
     precio:producto.precio,
     cantidad:producto.cantidad
   })
 
-  const actualizarProducto = ()=> {
-    console.log(infoNuevoProducto);
+  const actualizarProducto = async ()=> {
     //enviar info al backend
-    const options = {
-      method: 'PATCH',
-      url: 'https://',
-      headers: { 'Content-Type' : 'application/json'},
-      data: { ...infoNuevoProducto, id: producto.id},
-    };
-
-    await axios
-      .request(options)
-      .then(function(response){
+    await editarProducto(
+      producto.id,
+      {
+        nombre: infoNuevoProducto.nombre,
+        precio: infoNuevoProducto.precio,
+        cantidad: infoNuevoProducto.cantidad,
+      },
+      (response) => {
         console.log(response.data);
-        toast.success('Producto Actualizado Exitosamente');
+        toast.success('Producto modificado con éxito');
         setEdit(false);
         setEjecutarConsulta(true);
-      })
-      .catch(function(error){
-        toast.error('Error Actualizando Producto')
-        console.log(error);
-      });
+      },
+      (error) => {
+        toast.error('Error modificando el producto');
+        console.error(error);
+      }
+    );
   };
 
-  const eliminarProducto = (producto) => {
-    const options = {
-      method: 'DELETE',
-      url: 'https://',
-      headers: { 'Content-Type' : 'application/json'},
-      data: { id: producto.id},
-    };
+  const borrarProducto = async () => {
+    await eliminarProducto(
+      producto.id,
+      (response) => {
+        console.log(response.data);
+        toast.success('Producto eliminado con éxito');
+        setEjecutarConsulta(true);
+      },
+      (error) => {
+        console.error(error);
+        toast.error('Error eliminando el producto');
+      }
+    );
 
-  await axios
+    setOpenDialog(false);
+  }
+
+ /* await axios
     .request(options)
     .then(function(response) {
       console.log(response.data);
@@ -182,12 +212,13 @@ const FilaProducto = ({producto, setEjecutarConsulta}) => {
       toast.error('Algo Falló')
     });
     setOpenDialog(false);
-  };
+  }; */
 
   return (
     <div>
       {edit ?(
         <>
+        <td>{infoNuevoProducto.id}</td>
           <td>
             <input className="bg-gray-50 border border-yellow-700 p-2 rounded-lg m-2"
               type="text" 
@@ -208,11 +239,14 @@ const FilaProducto = ({producto, setEjecutarConsulta}) => {
         </>
       ) : (
     <>
+    <td>{producto.id.slice(20)}</td>
     <td>{producto.nombre}</td>
     <td>{producto.precio}</td>
     <td>{producto.cantidad}</td>
     </>
     )}
+
+    <PrivateComponent roleList={['admin']}>
     <td>
       <div className='flex w-full justify-around'>
         {edit ? (
@@ -265,7 +299,8 @@ const FilaProducto = ({producto, setEjecutarConsulta}) => {
               </div>
             </div>
           </Dialog>
-    </td>
+      </td>
+    </PrivateComponent>
   </div>
   )
 }
@@ -276,7 +311,7 @@ const FormularioCreacionProductos = ({
   setProductos}) => {
   const form = useRef(null);
 
-  const submitForm = (e)=>{
+  const submitForm = async (e)=>{
     e.preventDefault();
     const fd = new FormData(form.current);
 
@@ -284,11 +319,23 @@ const FormularioCreacionProductos = ({
     fd.forEach((value, key)=>{
       nuevoProducto[key] = value;
     });
-    setMostrarTabla(true);
-    toast.success("¡Agregado Exitosamente!");
-    
-    //toast.error('Algo Falló :(');
 
+    await crearProducto(
+      {
+        nombre: nuevoProducto.nombre,
+        precio: nuevoProducto.precio,
+        model: nuevoProducto.cantidad,
+      },
+      (response) => {
+        console.log(response.data);
+        toast.success('Vehículo agregado con éxito');
+      },
+      (error) => {
+        console.error(error);
+        toast.error('Error creando un vehículo');
+      }
+    );
+    setMostrarTabla(true);
   };
 
   return (
