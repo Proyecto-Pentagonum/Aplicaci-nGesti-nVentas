@@ -7,6 +7,9 @@ import RegistrarVenta from './Pages/RegistrarVenta';
 import ListaVentas from './Pages/ListaVentas.jsx';
 import PrivateLayoutventa from "./layouts/PrivateLayoutventa.jsx";
 import ActualizarVenta from './Pages/ActualizarVenta';
+import PrivateLayoutUsuario from './layouts/PrivateLayoutUsuario';
+import ListaUsuarios from './Pages/Usuario/ListaUsuarios';
+import ActualizarUsuario from './Pages/Usuario/ActualizarUsuario';
 
 
 
@@ -29,7 +32,22 @@ function App() {
                 </Route>
               </Switch>
             </Route>
-          </PrivateLayoutventa> 
+          </PrivateLayoutventa>
+        </Switch>
+        <Switch>
+          <PrivateLayoutUsuario>
+            <Route path={['/ListaUsuarios','/ActualizarUsuario']}>
+              <Switch>
+                
+                <Route path="/ListaUsuarios">
+                  <ListaUsuarios />
+                </Route>
+                <Route path="/ActualizarUsuario">
+                  <ActualizarUsuario />
+                </Route>
+              </Switch>
+            </Route>
+          </PrivateLayoutUsuario> 
         </Switch>
       </Router>
     </div>
