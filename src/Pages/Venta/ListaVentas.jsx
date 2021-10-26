@@ -1,14 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ListaUsuarios = () => {
+
+const ListaVentas = () => {
+    
+    
+
     return (
-        <div>
-            <div class="list-ventas">
+        
+        <div class="list-ventas">
             <ul>
                 <li class="subtitulo">
                 
-                    <span >Usuarios</span>
+                    <span >Ventas</span>
                 </li>
             </ul>
             <ul class="var-buscar-venta">
@@ -19,6 +23,9 @@ const ListaUsuarios = () => {
                     
                 </li>
                 
+                <li>       
+                    <Link to="/RegistrarVenta"><button class="btn btn-warning">Registrar venta</button></Link>
+                </li>
             </ul>
             <br></br>
             <ul>
@@ -26,20 +33,19 @@ const ListaUsuarios = () => {
                     <table rules='cols'>
                         <thead>
                             <tr>
-                                <th>ID Usuario</th><th>Usuario</th><th>Rol</th><th>Estado de usuario</th><th>Actualizar</th>
+                                <th>ID Factura</th><th>ID producto</th><th>Cantidad</th><th>Precio unitario</th><th>Fecha venta</th><th>Cedula Cliente</th><th>Nombre cliente</th><th>Valor total</th><th>Id vendedor</th><th>Actualizar</th>
                             </tr>
                         </thead>
                         <tr>
-                            <td>001</td><td>tmorales@mail.com</td><td>Administrador</td><td>Autorizado</td><td><Link to="/ActualizarUsuario"><i class="fas fa-edit iconotabla"></i></Link></td>
+                            <td>001</td><td>25669754</td><td>1</td><td>1000</td><td>10/10/2021</td><td>25336941</td><td>Leo Martinez</td><td>10000</td><td>121</td><td><Link to="/ActualizarVenta"><i class="fas fa-edit iconotabla"></i></Link></td>
                         </tr>
                         
                     </table>
                 </div>
             </ul>
         </div>
-
-        </div>
+        
     );
 };
 
-export default ListaUsuarios;
+export default ListaVentas;

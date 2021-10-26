@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 import "./Venta.css";
-import RegistrarVenta from './Pages/RegistrarVenta';
-import ListaVentas from './Pages/ListaVentas.jsx';
+import RegistrarVenta from './Pages/Venta/RegistrarVenta';
+import ListaVentas from './Pages//Venta/ListaVentas';
 import PrivateLayoutventa from "./layouts/PrivateLayoutventa.jsx";
-import ActualizarVenta from './Pages/ActualizarVenta';
+import ActualizarVenta from './Pages/Venta/ActualizarVenta';
 import PrivateLayoutUsuario from './layouts/PrivateLayoutUsuario';
 import ListaUsuarios from './Pages/Usuario/ListaUsuarios';
 import ActualizarUsuario from './Pages/Usuario/ActualizarUsuario';
@@ -38,7 +38,6 @@ function App() {
           <PrivateLayoutUsuario>
             <Route path={['/ListaUsuarios','/ActualizarUsuario']}>
               <Switch>
-                
                 <Route path="/ListaUsuarios">
                   <ListaUsuarios />
                 </Route>
