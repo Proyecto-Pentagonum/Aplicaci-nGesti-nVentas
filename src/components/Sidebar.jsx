@@ -10,9 +10,9 @@ const Sidebar = () => {
     const { user, logout } = useAuth0();
 
     const cerrarSesion = () => {
-        logout({ returnTo: 'http://localhost:3000/admin' });
+        logout({ returnTo: 'http://localhost:3000' });
         localStorage.setItem('token', null);
-      };
+    };
     return (
         <nav className='hidden md:flex md:w-72 border border-gray-300 h-full flex-col bg-yellow-400 p-4'>
         <Link to="/admin">

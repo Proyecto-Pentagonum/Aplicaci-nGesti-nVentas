@@ -86,7 +86,7 @@ const Personas = () => {
         </option>
         <option value='admin'>Admin</option>
         <option value='vendedor'>Vendedor</option>
-        <option value='usuario'>Usuario</option>
+        <option value='sin rol'>Sin rol</option>
       </select>
     );
   };

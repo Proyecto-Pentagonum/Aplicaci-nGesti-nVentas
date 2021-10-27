@@ -50,14 +50,14 @@ const Ventas = () => {
       const listaProductos = Object.keys(formData)
         .map((k) => {
           if (k.includes('producto')) {
-            return productosTabla.filter((v) => v.id === formData[k])[0];
+            return productosTabla.filter((v) => v._id === formData[k])[0];
           }
           return null;
         })
         .filter((v) => v);
   
       const datosVenta = {
-        vendedor: vendedores.filter((v) => v.id === formData.vendedor)[0],
+        vendedor: vendedores.filter((v) => v._id === formData.vendedor)[0],
         cantidad: formData.valor,
         productos: listaProductos,
       };
@@ -84,7 +84,7 @@ const Ventas = () => {
                 Seleccione un Vendedor
               </option>
               {vendedores.map((el) => {
-                return <option key={nanoid()} value={el.id}>{`${el.email}`}</option>;
+                return <option key={nanoid()} value={el._id}>{`${el.email}`}</option>;
               })}
             </select>
           </label>
@@ -125,19 +125,19 @@ const Ventas = () => {
   
     const agregarNuevoProducto = () => {
       setFilasTabla([...filasTabla, productoAAgregar]);
-      setProductos(productos.filter((v) => v.id !== productoAAgregar.id));
+      setProductos(productos.filter((v) => v._id !== productoAAgregar._id));
       setProductoAAgregar({});
     };
   
     const eliminarProducto = (productoAEliminar) => {
-      setFilasTabla(filasTabla.filter((v) => v.id !== productoAEliminar.id));
+      setFilasTabla(filasTabla.filter((v) => v._id !== productoAEliminar._id));
       setProductos([...productos, productoAEliminar]);
     };
   
     const modificarProducto = (producto, cantidad) => {
       setFilasTabla(
         filasTabla.map((ft) => {
-          if (ft.id === producto.id) {
+          if (ft._id === producto._id) {
             ft.cantidad = cantidad;
             ft.total = producto.valor * cantidad;
           }
@@ -152,9 +152,9 @@ const Ventas = () => {
           <label className='flex flex-col' htmlFor='producto'>
             <select
               className='p-2'
-              value={productoAAgregar.id ?? ''}
+              value={productoAAgregar._id ?? ''}
               onChange={(e) =>
-                setProductoAAgregar(productos.filter((v) => v.id === e.target.value)[0])
+                setProductoAAgregar(productos.filter((v) => v._id === e.target.value)[0])
               }
             >
               <option disabled value=''>
@@ -164,7 +164,7 @@ const Ventas = () => {
                 return (
                   <option
                     key={nanoid()}
-                    value={el.id}
+                    value={el._id}
                   >{`${el.nombre} ${el.precio} ${el.cantidad}`}</option>
                 );
               })}
@@ -195,7 +195,7 @@ const Ventas = () => {
             {filasTabla.map((el, index) => {
               return (
                 <FilaProducto
-                  key={el.id}
+                  key={el._id}
                   pro={el}
                   index={index}
                   eliminarProducto={eliminarProducto}
@@ -216,7 +216,7 @@ const Ventas = () => {
     }, [producto]);
     return (
       <tr>
-        <td>{producto.id}</td>
+        <td>{producto._id}</td>
         <td>{producto.nombre}</td>
         <td>{producto.precio}</td>
         <td>{producto.cantidad}</td>
@@ -244,11 +244,11 @@ const Ventas = () => {
         <td>
           <i
             onClick={() => eliminarProducto(producto)}
-            className='fas fa-minus text-red-500 cursor-pointer'
+            className='fas fa-trash text-red-500 cursor-pointer'
           />
         </td>
         <td className='hidden'>
-          <input hidden defaultValue={producto.id} name={`producto_${index}`} />
+          <input hidden defaultValue={producto._id} name={`producto_${index}`} />
         </td>
       </tr>
     );

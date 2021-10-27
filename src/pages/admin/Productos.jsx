@@ -155,7 +155,7 @@ const FilaProducto = ({producto, setEjecutarConsulta}) => {
   const [edit, setEdit] = useState(false);
   const [openDialog, setOpenDialog] = useState(false);
   const [infoNuevoProducto, setInfoNuevoProducto] = useState({
-    id:producto.id,
+    _id:producto._id,
     nombre:producto.nombre,
     precio:producto.precio,
     cantidad:producto.cantidad
@@ -164,7 +164,7 @@ const FilaProducto = ({producto, setEjecutarConsulta}) => {
   const actualizarProducto = async ()=> {
     //enviar info al backend
     await editarProducto(
-      producto.id,
+      producto._id,
       {
         nombre: infoNuevoProducto.nombre,
         precio: infoNuevoProducto.precio,
@@ -185,7 +185,7 @@ const FilaProducto = ({producto, setEjecutarConsulta}) => {
 
   const borrarProducto = async () => {
     await eliminarProducto(
-      producto.id,
+      producto._id,
       (response) => {
         console.log(response.data);
         toast.success('Producto eliminado con éxito');
@@ -200,25 +200,11 @@ const FilaProducto = ({producto, setEjecutarConsulta}) => {
     setOpenDialog(false);
   }
 
- /* await axios
-    .request(options)
-    .then(function(response) {
-      console.log(response.data);
-      toast.success('Producto Borrado Exitosamente');
-      setEjecutarConsulta(true);   
-    })
-    .catch(function(error) {
-      console.error(error);
-      toast.error('Algo Falló')
-    });
-    setOpenDialog(false);
-  }; */
-
   return (
     <div>
       {edit ?(
         <>
-        <td>{infoNuevoProducto.id}</td>
+        <td>{infoNuevoProducto._id}</td>
           <td>
             <input className="bg-gray-50 border border-yellow-700 p-2 rounded-lg m-2"
               type="text" 
@@ -243,7 +229,7 @@ const FilaProducto = ({producto, setEjecutarConsulta}) => {
         </>
       ) : (
     <>
-    <td>{producto.id.slice(20)}</td>
+    <td>{producto._id.slice(20)}</td>
     <td>{producto.nombre}</td>
     <td>{producto.precio}</td>
     <td>{producto.cantidad}</td>

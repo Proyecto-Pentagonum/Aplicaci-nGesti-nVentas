@@ -37,7 +37,7 @@ return (
           </div>
         </div>
         <div>
-          <Link to='/admin'>
+          <Link to='/admin/productos'>
             <button type='submit'>Iniciar Sesion</button>
           </Link>
         </div>

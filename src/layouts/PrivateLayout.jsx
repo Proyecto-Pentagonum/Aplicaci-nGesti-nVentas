@@ -40,7 +40,7 @@ const PrivateLayout = ({ children }) => {
   }, [isAuthenticated, getAccessTokenSilently, logout, setUserData]);
 
   if (isLoading || loadingUserInformation)
-    return <ReactLoading type='cylon' color='#abc123' height={667} width={375} />;
+    return <ReactLoading type='cylon' color='#abc123' height={666} width={333} />;
 
   if (!isAuthenticated) {
     return loginWithRedirect();

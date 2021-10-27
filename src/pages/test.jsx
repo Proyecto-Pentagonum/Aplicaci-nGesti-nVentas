@@ -33,8 +33,8 @@ const Test = () => {
 
     const informacionConsolidada = {
       valor: nuevaVenta.cantidadVenta,
-      producto: productos.filter((el) => el.id === nuevaVenta.producto)[0],
-      vendedor: personas.filter((el) => el.id === nuevaVenta.vendedor)[0],
+      producto: productos.filter((el) => el._id === nuevaVenta.producto)[0],
+      vendedor: personas.filter((el) => el._id === nuevaVenta.vendedor)[0],
     };
     console.log(informacionConsolidada);
 
@@ -66,7 +66,7 @@ const Test = () => {
           <select name='vendedor'>
             {personas.map((u) => {
               return (
-                <option key={nanoid()} value={u.id}>
+                <option key={nanoid()} value={u._id}>
                   {u.email}
                 </option>
               );
@@ -76,10 +76,10 @@ const Test = () => {
         <label>
           Seleccionar Producto
           <select name='producto'>
-            {productos.map((v) => {
+            {productos.map((p) => {
               return (
-                <option value={v.id} key={nanoid()}>
-                  {v.name}
+                <option value={p._id} key={nanoid()}>
+                  {p.name}
                 </option>
               );
             })}

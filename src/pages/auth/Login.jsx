@@ -75,7 +75,7 @@ return (
                         focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-400"
             >
               <span className="absolute left-0 inset-y-0 flex items-center pl-3"></span>
-              <Link to="/admin">Inicio de sesión</Link>
+              <Link to="/admin/productos">Inicio de sesión</Link>
             </button>
           </div>
 

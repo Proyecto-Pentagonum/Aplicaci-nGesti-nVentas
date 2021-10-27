@@ -1,8 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import TriggerDarkMode from './TriggerDarkMode';
+import { useAuth0 } from '@auth0/auth0-react';
 
 const Navbar = () => {
+    const { loginWithRedirect } = useAuth0();
     return (
         <nav className='bg-yellow-500'>
             <ul className='flex w-full justify-between my-2 px-3'>
@@ -13,12 +14,12 @@ const Navbar = () => {
                 <TriggerDarkMode /> 
                 </li>
                 <li className='px-3'>
-                    <Link to='/login'>
-                    <button className='bg-yellow-700 p-1 px-2 text-white rounded-lg 
+                    <button 
+                    onClick={() => loginWithRedirect()}
+                    className='bg-yellow-700 p-1 px-2 text-white rounded-lg 
                     shadow-md hover:bg-yellow-400'>
                         Inicio Sesión
                     </button>
-                    </Link>
                 </li>
             </ul>
         </nav>

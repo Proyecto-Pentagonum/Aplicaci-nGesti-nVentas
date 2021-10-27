@@ -26,8 +26,8 @@ function App() {
   return (
     <Auth0Provider
       domain='pentagonum.us.auth0.com'
-      clientId='WsdhjjQzDLIZEHA6ouuxXGxFONFGAQ4g'
-      redirectUri='http://localhost:5000/admin'
+      clientId='ANxey2O25fCWUUCdPxh2gkJ7qduiCU7g'
+      redirectUri='http://localhost:3000/admin'
       audience='api-autenticacion-pentagonum'
     >
     <div className='App'>
