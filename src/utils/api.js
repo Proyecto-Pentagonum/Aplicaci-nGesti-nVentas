@@ -1,5 +1,5 @@
 import axios from 'axios';
-const baseURL = 'http://localhost:5000/productos/';
+const baseURL = 'https://ancient-bastion-03142.herokuapp.com/';
 
 const getToken = () => {
   return `Bearer ${localStorage.getItem('token')}`;
