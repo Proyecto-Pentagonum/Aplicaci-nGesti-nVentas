@@ -27,7 +27,7 @@ function App() {
     <Auth0Provider
       domain='pentagonum.us.auth0.com'
       clientId='ANxey2O25fCWUUCdPxh2gkJ7qduiCU7g'
-      redirectUri='http://localhost:3000/admin'
+      redirectUri='https://young-ridge-86290.herokuapp.com'
       audience='api-autenticacion-pentagonum'
     >
     <div className='App'>
