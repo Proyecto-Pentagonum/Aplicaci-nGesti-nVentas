@@ -10,7 +10,7 @@ const Sidebar = () => {
     const { user, logout } = useAuth0();
 
     const cerrarSesion = () => {
-        logout({ returnTo: 'http://localhost:3000' });
+        logout({ returnTo: 'https://young-ridge-86290.herokuapp.com/admin' });
         localStorage.setItem('token', null);
     };
     return (
