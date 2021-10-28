@@ -29,7 +29,7 @@ return (
           <div>
             <label htmlFor='Recordarme'>
               <input type='checkbox' name='recordarme' />
-              Recuerdame
+              Recordame
             </label>
           </div>
           <div>
@@ -37,7 +37,7 @@ return (
           </div>
         </div>
         <div>
-          <Link to='/admin/productos'>
+          <Link to='/admin'>
             <button type='submit'>Iniciar Sesion</button>
           </Link>
         </div>
