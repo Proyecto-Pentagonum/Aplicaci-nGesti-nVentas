@@ -30,7 +30,7 @@ const PrivateLayout = ({ children }) => {
         (err) => {
           console.log('err', err);
           setLoadingUserInformation(false);
-          logout({ returnTo: 'http://localhost:3000/admin' });
+          logout({ returnTo: 'https://young-ridge-86290.herokuapp.com/' });
         }
       );
     };
