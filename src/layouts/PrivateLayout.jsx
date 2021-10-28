@@ -30,7 +30,7 @@ const PrivateLayout = ({ children }) => {
         (err) => {
           console.log('err', err);
           setLoadingUserInformation(false);
-          logout({ returnTo: 'https://young-ridge-86290.herokuapp.com' });
+          logout({ returnTo: 'http://localhost:3000/admin' });
         }
       );
     };
@@ -40,7 +40,7 @@ const PrivateLayout = ({ children }) => {
   }, [isAuthenticated, getAccessTokenSilently, logout, setUserData]);
 
   if (isLoading || loadingUserInformation)
-    return <ReactLoading type='cylon' color='#abc123' height={666} width={333} />;
+    return <ReactLoading type='cylon' color='#09eb18' height={666} width={333} />;
 
   if (!isAuthenticated) {
     return loginWithRedirect();
