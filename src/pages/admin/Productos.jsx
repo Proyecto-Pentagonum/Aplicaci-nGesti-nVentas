@@ -109,7 +109,7 @@ const TablaProductos = ({ loading, listaProductos, setEjecutarConsulta }) => {
       </h2>
       <div className='hidden md:flex w-full'>
       {loading ? (
-          <ReactLoading type='cylon' color='#abc123' height={667} width={375} />
+          <ReactLoading type='cylon' color='##09eb18' height={666} width={666} />
       ) : (
       <table className='tabla'>
         <thead>
